@@ -1,0 +1,20 @@
+<h2>Manifest Contents:</h2>
+<ul class="heroes">
+  <li *ngFor="let pkg of manifest"
+    [class.selected]="pkg === selectedPkg"
+    (click)="onSelect(pkg)">
+    <span class="badge">{{pkg.pkgTrackingId}}</span> {{pkg.pkgDestination}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPkg">
+
+  <h2>{{selectedPkg.pkgTrackingId}}-{{selectedPkg.pkgDestination | uppercase}} Details</h2>
+  <div><span>Eta: </span>{{selectedPkg.pkgETA}}</div>
+  <div>
+    <label>Processed:
+      <input [(ngModel)]="selectedPkg.pkgProcDate" placeholder="processed on..."/>
+    </label>
+  </div>
+
+</div>
