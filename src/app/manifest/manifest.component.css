@@ -42,3 +42,15 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+table, th , td {
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}

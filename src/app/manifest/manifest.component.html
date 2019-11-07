@@ -1,20 +1,26 @@
-<h2>Manifest Contents:</h2>
-<ul class="heroes">
-  <li *ngFor="let pkg of manifest"
-    [class.selected]="pkg === selectedPkg"
-    (click)="onSelect(pkg)">
-    <span class="badge">{{pkg.pkgTrackingId}}</span> {{pkg.pkgDestination}}
-  </li>
-</ul>
-
-<div *ngIf="selectedPkg">
-
-  <h2>{{selectedPkg.pkgTrackingId}}-{{selectedPkg.pkgDestination | uppercase}} Details</h2>
-  <div><span>Eta: </span>{{selectedPkg.pkgETA}}</div>
-  <div>
-    <label>Processed:
-      <input [(ngModel)]="selectedPkg.pkgProcDate" placeholder="processed on..."/>
-    </label>
-  </div>
-
+<div class = 'table-container'>
+<table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Tracking Id:</th>
+      <th>Destination:</th>
+      <th>ETA:</th>
+      <th>Weight:</th>
+      <th>Processed:</th>
+      <th>Action:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let pkg of manifest'>
+      <td>{{pkg.pkgTrackingId}}</td>
+      <td>{{pkg.pkgDestination}}</td>
+      <td>{{pkg.pkgETA}}</td>
+      <td>{{pkg.pkgWeight}}</td>
+      <td>{{pkg.pkgProcDate}}</td>
+      <td><button>...</button></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
+

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Manifest } from '../mock-data';
 import { Freight } from '../freight';
 
@@ -9,6 +8,8 @@ import { Freight } from '../freight';
   styleUrls: ['./manifest.component.css']
 })
 export class ManifestComponent implements OnInit {
+
+  loader: boolean;
 
   // freight: Freight = {
   //     pkgDestination: 'btc',
@@ -32,10 +33,6 @@ export class ManifestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onSelect(pkg: Freight): void {
-    this.selectedPkg = pkg;
   }
 
 }
