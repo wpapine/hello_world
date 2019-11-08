@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ManifestComponent } from './manifest/manifest.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgMode
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

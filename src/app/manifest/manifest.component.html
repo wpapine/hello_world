@@ -1,3 +1,16 @@
+<label for="typeahead-focus">Search for a state:</label>
+<input
+  id="typeahead-focus"
+  type="text"
+  class="form-control"
+  [(ngModel)]="model"
+  [ngbTypeahead]="search"
+  (focus)="focus$.next($event.target.value)"
+  (click)="click$.next($event.target.value)"
+  #instance="ngbTypeahead"
+/>
+<hr>
+<pre>Model: {{ model | json }}</pre>
 <div class = 'table-container'>
 <table datatable class="row-border hover">
   <thead>

@@ -1,4 +1,16 @@
-/* HeroesComponent's private CSS styles */
+table, th , td {
+  padding: 5px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* HeroesComponent's private CSS styles
 .heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
@@ -43,14 +55,4 @@
   border-radius: 4px 0 0 4px;
 }
 
-table, th , td {
-  padding: 5px;
-}
-
-table tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-
-table tr:nth-child(even) {
-  background-color: #ffffff;
-}
+*/
