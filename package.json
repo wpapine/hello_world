@@ -2,6 +2,10 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": "1.0.0",
   "newProjectRoot": "projects",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"openshift": "nodeshift --imageTag=12.x --strictSSL=false --tryServiceAccount=false"
+  },
   "projects": {
     "param-admin-ui": {
       "root": "",
@@ -207,17 +211,15 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodeshift": "^3.1.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
   },
-  "name": "hello_world",
+  "name": "helloworld",
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wpapine/hello_world.git"
