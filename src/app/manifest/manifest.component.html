@@ -2,7 +2,7 @@
 <input
   id="typeahead-focus"
   type="text"
-  class="form-control"
+  class="form-control minimal"
   [(ngModel)]="model"
   [ngbTypeahead]="search"
   (focus)="focus$.next($event.target.value)"

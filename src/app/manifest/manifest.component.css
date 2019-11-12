@@ -9,7 +9,10 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
-
+.form-control.minimal {
+    width: 150px !important;
+	display: inline-block;
+}
 /* HeroesComponent's private CSS styles
 .heroes {
   margin: 0 0 2em 0;
