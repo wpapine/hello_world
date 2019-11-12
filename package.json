@@ -4,7 +4,8 @@
   "newProjectRoot": "projects",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --imageTag=12.x --strictSSL=false --tryServiceAccount=false"
+    "openshift": "nodeshift --imageTag=12.x --strictSSL=false --tryServiceAccount=false --configLocation /openshift.local.config/master/admin.kubeconfig",
+	"start": "ng serve"
   },
   "projects": {
     "param-admin-ui": {
