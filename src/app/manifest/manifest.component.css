@@ -16,10 +16,16 @@ table tr:nth-child(even) {
 .horizontalControl {
 	float:left;
 	display: inline-block;
+	margin-right: 20px;
 }
 .controlGroup
 {
 	display: inline-block;
+}
+.rightMost
+{
+	right: 0px;
+    position: absolute;
 }
 /* HeroesComponent's private CSS styles
 .heroes {
