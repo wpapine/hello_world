@@ -7,7 +7,7 @@ import { Freight } from '../freight';
 import { Pipe, PipeTransform } from '@angular/core';
 
 
-var moment = require('moment');
+import * as moment from 'moment';
 
 @Pipe({name: 'prepDate'})
 export class prepDate implements PipeTransform {
