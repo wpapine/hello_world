@@ -27,6 +27,7 @@ table tr:nth-child(even) {
 	right: 0px;
     position: absolute;
 }
+
 /* HeroesComponent's private CSS styles
 .heroes {
   margin: 0 0 2em 0;

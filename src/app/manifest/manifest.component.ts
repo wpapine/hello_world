@@ -40,7 +40,7 @@ export class ManifestComponent implements OnInit {
 
   constructor() {
     this.config = {
-      itemsPerPage: 5,
+      itemsPerPage: 14,
       currentPage: 1,
       totalItems: this.manifest.length
     };
