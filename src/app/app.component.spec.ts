@@ -1,15 +1,29 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ManifestComponent, prepDate } from './manifest/manifest.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,   
+		NgxPaginationModule,
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		NgbModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+		ManifestComponent,
+	    prepDate
       ],
     }).compileComponents();
   }));
@@ -20,16 +34,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'param-admin-ui'`, () => {
+  it(`should have as title 'Parameter Service'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('param-admin-ui');
+    expect(app.title).toEqual('Parameter Service');
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to param-admin-ui!');
-  });
 });
