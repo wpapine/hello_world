@@ -13,6 +13,14 @@ table tr:nth-child(even) {
     width: 150px !important;
 	display: inline-block;
 }
+.horizontalControl {
+	float:left;
+	display: inline-block;
+}
+.controlGroup
+{
+	display: inline-block;
+}
 /* HeroesComponent's private CSS styles
 .heroes {
   margin: 0 0 2em 0;

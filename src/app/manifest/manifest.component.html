@@ -1,4 +1,6 @@
-<label for="typeahead-focus">Search for a state:</label>
+<div class="controlGroup"><div class="horizontalControl">
+<label for="typeahead-focus">Parameter Group</label>
+<br />
 <input
   id="typeahead-focus"
   type="text"
@@ -9,8 +11,13 @@
   (click)="click$.next($event.target.value)"
   #instance="ngbTypeahead"
 />
+</div>
+<div class="horizontalControl">
 <input type="text" (click)="functionCall()"/>
+</div>
+<div class="horizontalControl">
 <input/>
+</div></div>
 <hr>
 <pre>Model: {{ model | json }}</pre>
 <div style="text-align:center">
