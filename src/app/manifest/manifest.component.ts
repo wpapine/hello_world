@@ -4,7 +4,23 @@ import { Observable, Subject, merge } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { Manifest } from '../mock-data';
 import { Freight } from '../freight';
+import { Pipe, PipeTransform } from '@angular/core';
 
+@Pipe({name: 'prepDate'})
+export class prepDate implements PipeTransform {
+  transform(value: string): string {
+    if(value.split(' ')[0].split('-').slice(-1)[0].length == 4)
+	{
+		var year = value.split(' ')[0].split('-').slice(-1)[0];
+		var month = value.split(' ')[0].split('-')[0];
+		var day = value.split(' ')[0].split('-')[1];
+		var time = value.split(' ')[1];
+		return Date(Date.parse(year+'-'+month+'-'+day+' '+time)).toString();
+	}
+		new Date(Date.parse(value)).toString();
+    return new Date(Date.parse(value)).toString();
+  }
+}
 const mockgroups = ['AAA-ParameterGroupName', 'BBB-ParameterGroupName', 'CCC-ParameterGroupName', 'DDD-ParameterGroupName'];
 
 @Component({
