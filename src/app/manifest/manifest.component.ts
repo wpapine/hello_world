@@ -6,6 +6,9 @@ import { Manifest } from '../mock-data';
 import { Freight } from '../freight';
 import { Pipe, PipeTransform } from '@angular/core';
 
+
+var moment = require('moment');
+
 @Pipe({name: 'prepDate'})
 export class prepDate implements PipeTransform {
   transform(value: string): string {
@@ -15,8 +18,7 @@ export class prepDate implements PipeTransform {
 		var mm = value.split(' ')[0].split('-')[0];
 		var dd = value.split(' ')[0].split('-')[1];
 		var tt = value.split(' ')[1];
-		
-		return new Date(Date.parse(yy+'-'+mm+'-'+dd+' '+tt)).toString();
+		return moment(value, "MM-DD-YYYY HH:mm").toString();
 	}
 	else
     return new Date(Date.parse(value)).toString();
