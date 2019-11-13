@@ -11,13 +11,14 @@ export class prepDate implements PipeTransform {
   transform(value: string): string {
     if(value.split(' ')[0].split('-').slice(-1)[0].length == 4)
 	{
-		var year = value.split(' ')[0].split('-').slice(-1)[0];
-		var month = value.split(' ')[0].split('-')[0];
-		var day = value.split(' ')[0].split('-')[1];
-		var time = value.split(' ')[1];
-		return Date(Date.parse(year+'-'+month+'-'+day+' '+time)).toString();
+		var yy = value.split(' ')[0].split('-').slice(-1)[0];
+		var mm = value.split(' ')[0].split('-')[0];
+		var dd = value.split(' ')[0].split('-')[1];
+		var tt = value.split(' ')[1];
+		
+		return new Date(Date.parse(yy+'-'+mm+'-'+dd+' '+tt)).toString();
 	}
-		new Date(Date.parse(value)).toString();
+	else
     return new Date(Date.parse(value)).toString();
   }
 }
