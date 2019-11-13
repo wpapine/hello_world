@@ -31,7 +31,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of manifest | paginate: this.config">
-        <td>{{item.pkgDestination}}</td><td>{{item.pkgTrackingId}}</td><td>{{item.pkgETA}}</td><td>{{item.pkgWeight}}</td><td><input type="button"/></td>
+        <td>{{item.pkgDestination}}</td><td>{{item.pkgTrackingId}}</td><td>{{item.pkgProcDate | date: 'MM-dd-yy'}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.pkgProcDate | date: 'HH:mm'}}</td><td>{{item.pkgWeight}}</td><td><input type="button"/></td>
       </tr>
     </tbody>
   </table>
