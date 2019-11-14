@@ -5,7 +5,8 @@ import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators'
 import { Manifest } from '../mock-data';
 import { Freight } from '../freight';
 import { Pipe, PipeTransform } from '@angular/core';
-
+import { ModalService } from '../_services/modal.service';
+import { ModalComponent } from '../modal/modal.component';
 
 import * as moment from 'moment';
 
@@ -57,7 +58,7 @@ export class ManifestComponent implements OnInit {
     );
   }
 
-  constructor() {
+  constructor(private modalService: ModalService) {
     this.config = {
       itemsPerPage: 14,
       currentPage: 1,
@@ -75,5 +76,11 @@ export class ManifestComponent implements OnInit {
   functionCall() {
     console.log('it are works');
   }
+ openModal(id: string) {
+        this.modalService.open(id);
+    }
 
+    closeModal(id: string) {
+        this.modalService.close(id);
+    }
 }

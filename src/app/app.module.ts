@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ManifestComponent, prepDate } from './manifest/manifest.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ManifestComponent,
-	prepDate
+	prepDate,
+	ModalComponent
   ],
   imports: [
     NgxPaginationModule,

@@ -1,3 +1,8 @@
+<jw-modal id="custom-modal-1" class="pageModal">
+  <h1>A Custom Angular 7 Modal!</h1>
+  <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
+  <button (click)="closeModal('custom-modal-1');">Close</button>
+</jw-modal>
 <div class="controlGroup"><div class="horizontalControl">
 <label for="typeahead-focus">Parameter Group</label>
 <br />
@@ -22,6 +27,7 @@
 <br />
 <input/>
 </div></div>
+
 <div style="text-align:center">
   <table class="table">
     <thead>
@@ -31,7 +37,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of manifest | paginate: this.config">
-        <td>{{item.pkgDestination}}</td><td>{{item.pkgTrackingId}}</td><td>{{item.pkgProcDate | prepDate | date: 'MM-dd-yy'}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.pkgProcDate | prepDate | date: 'HH:mm'}}</td><td>{{item.pkgWeight}}</td><td><input type="button"/></td>
+        <td>{{item.pkgDestination}}</td><td>{{item.pkgTrackingId}}</td><td>{{item.pkgProcDate | prepDate | date: 'MM-dd-yy'}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.pkgProcDate | prepDate | date: 'HH:mm'}}</td><td>{{item.pkgWeight}}</td><td><input type="button" (click)="openModal('custom-modal-1')"/></td>
       </tr>
     </tbody>
   </table>

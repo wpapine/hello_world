@@ -28,6 +28,15 @@ table tr:nth-child(even) {
     position: absolute;
 }
 
+.pageModal
+{
+	top: 30%;
+    position: fixed;
+	width: 30%;
+    margin: auto;
+    margin-left: 35%;
+}
+
 /* HeroesComponent's private CSS styles
 .heroes {
   margin: 0 0 2em 0;
