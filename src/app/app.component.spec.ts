@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ManifestComponent, prepDate } from './manifest/manifest.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ModalService } from './_services/modal.service';
+import { ModalComponent } from './modal/modal.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -18,13 +20,15 @@ describe('AppComponent', () => {
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule,
-		NgbModule,
+		NgbModule
       ],
       declarations: [
         AppComponent,
 		ManifestComponent,
-	    prepDate
+	    prepDate,
+		ModalComponent
       ],
+	  providers: [ ModalService ]
     }).compileComponents();
   }));
 

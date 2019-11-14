@@ -10,6 +10,9 @@ import { ManifestComponent, prepDate } from './manifest.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ModalService } from '../_services/modal.service';
+import { ModalComponent } from '../modal/modal.component';
+import {  ElementRef, Input, OnDestroy } from '@angular/core';
 
 describe('ManifestComponent', () => {
   let component: ManifestComponent;
@@ -18,7 +21,8 @@ describe('ManifestComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
 	  imports: [ FormsModule, NgbModule, NgxPaginationModule ],
-      declarations: [ ManifestComponent, prepDate ]
+      declarations: [ ManifestComponent, prepDate, ModalComponent ],
+	  providers: [ ModalService ]
     })
     .compileComponents();
   }));
