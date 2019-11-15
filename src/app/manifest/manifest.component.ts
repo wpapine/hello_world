@@ -5,6 +5,7 @@ import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators'
 import { Manifest } from '../mock-data';
 import { Freight } from '../freight';
 import { Pipe, PipeTransform } from '@angular/core';
+import { ParametersService } from '../manifest/parameters.service';
 import { ModalService } from '../_services/modal.service';
 import { ModalComponent } from '../modal/modal.component';
 
@@ -53,7 +54,7 @@ export class ManifestComponent implements OnInit {
     );
   }
 
-  constructor(private modalService: ModalService) {
+  constructor(private modalService: ModalService, private paramsService: ParametersService) {
     this.config = {
       itemsPerPage: 14,
       currentPage: 1,
@@ -62,6 +63,10 @@ export class ManifestComponent implements OnInit {
   }
 
   ngOnInit() {
+    // when the component is called / loaded it will call the service to obtain groups by role
+    // TODO: still need to confirm a few details then will use the response data to populate the drop down
+    // per discussion / goal for test component
+    this.getGroups();
   }
 
   pageChanged(event) {
@@ -78,5 +83,12 @@ export class ManifestComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+
+  getGroups(): void {
+    this.paramsService.getGroupsByRole({/* JWT */})
+      .subscribe(() => {
+        // do stuff with response using next built in
+      });
   }
 }
