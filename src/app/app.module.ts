@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ManifestComponent, prepDate } from './manifest/manifest.component';
+import { ManifestComponent, PrepDate } from './manifest/manifest.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalComponent } from './modal/modal.component';
@@ -12,8 +12,8 @@ import { ModalComponent } from './modal/modal.component';
   declarations: [
     AppComponent,
     ManifestComponent,
-	prepDate,
-	ModalComponent
+    PrepDate,
+    ModalComponent
   ],
   imports: [
     NgxPaginationModule,

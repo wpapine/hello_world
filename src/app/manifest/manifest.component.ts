@@ -11,20 +11,15 @@ import { ModalComponent } from '../modal/modal.component';
 import * as moment from 'moment';
 
 @Pipe({name: 'prepDate'})
-export class prepDate implements PipeTransform {
+export class PrepDate implements PipeTransform {
   transform(value: string): string {
-    if(value.split(' ')[0].split('-').slice(-1)[0].length == 4)
-	{
-		var yy = value.split(' ')[0].split('-').slice(-1)[0];
-		var mm = value.split(' ')[0].split('-')[0];
-		var dd = value.split(' ')[0].split('-')[1];
-		var tt = value.split(' ')[1];
-		return moment(value, "MM-DD-YYYY HH:mm").toString();
-	}
-	else
+    if (value.split(' ')[0].split('-').slice(-1)[0].length === 4) {
+      return moment(value, 'MM-DD-YYYY HH:mm').toString();
+    }
     return new Date(Date.parse(value)).toString();
   }
 }
+
 const mockgroups = ['AAA-ParameterGroupName', 'BBB-ParameterGroupName', 'CCC-ParameterGroupName', 'DDD-ParameterGroupName'];
 
 @Component({
@@ -76,11 +71,12 @@ export class ManifestComponent implements OnInit {
   functionCall() {
     console.log('it are works');
   }
- openModal(id: string) {
-        this.modalService.open(id);
-    }
 
-    closeModal(id: string) {
-        this.modalService.close(id);
-    }
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
 }
