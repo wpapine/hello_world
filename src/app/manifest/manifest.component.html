@@ -3,30 +3,33 @@
   <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
   <button (click)="closeModal('custom-modal-1');">Close</button>
 </jw-modal>
-<div class="controlGroup"><div class="horizontalControl">
-<label for="typeahead-focus">Parameter Group</label>
-<br />
-<input
-  id="typeahead-focus"
-  type="text"
-  class="form-control minimal"
-  [(ngModel)]="model"
-  [ngbTypeahead]="search"
-  (focus)="focus$.next($event.target.value)"
-  (click)="click$.next($event.target.value)"
-  #instance="ngbTypeahead"
-/>
+<div class="controlGroup">
+  <div class="horizontalControl">
+    <label for="typeahead-focus">Parameter Group</label>
+    <br />
+    <div class="row">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem> Parameter group placeholder</button>
+            <!-- use ng repeat here to iterate over groups creating each option in the drop down-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="horizontalControl">
+  <label for="typeahead-focus">Filter Parameter Name</label>
+  <br />
+  <input type="text" (click)="functionCall()"/>
+  </div>
+  <div class="horizontalControl" class="rightMost">
+      <label class="btn-primary" ngbButtonLabel>
+        + Add Parameter
+        </label>
+  </div>
 </div>
-<div class="horizontalControl">
-<label for="typeahead-focus">Filter Parameter Name</label>
-<br />
-<input type="text" (click)="functionCall()"/>
-</div>
-<div class="horizontalControl" class="rightMost">
-<label for="typeahead-focus">&nbsp;</label>
-<br />
-<input/>
-</div></div>
 
 <div style="text-align:center">
   <table class="table">
@@ -46,4 +49,11 @@
 
 </div>
 
+<!--
+<div class="horizontalControl" class="rightMost">
+    <label class="btn-primary" ngbButtonLabel>
+      + Add Parameter
+      </label>
+</div>
+-->
 
